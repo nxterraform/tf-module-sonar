@@ -2,7 +2,7 @@ resource "helm_release" "sonar" {
   name  = "sonarqube-nx"
   chart = "sonarqube"
   namespace = var.namespace
-  repository = data.helm_repository.loki.url
+  repository = data.helm_repository.sonar.url
   create_namespace = true
   atomic = true
   
