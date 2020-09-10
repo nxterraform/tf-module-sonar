@@ -5,6 +5,9 @@ resource "helm_release" "sonar" {
   repository = data.helm_repository.loki.url
   create_namespace = true
   atomic = true
-
+  
+  values = [
+    file("${path.module}/values.yaml")
+  ]
 
 }
